@@ -17,11 +17,7 @@ export class SideNavComponent implements OnInit {
     {
       name: 'My urls',
       url:'myurls'
-    },
-    {
-      name: 'Profile',
-      url:'profile'
-    }
+    } 
   ]
   constructor(zone: NgZone) {
     this.mediaMatcher.addListener((mql)=>

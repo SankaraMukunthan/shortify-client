@@ -9,6 +9,8 @@ import {MaterialModule} from '../shared/material.module'
 import { ShortifyRoutingModule } from './shortify-routing.module';
 import { UrlShortenerModule } from '../url-shortener/url-shortener.module';
 import { MyurlsModule } from '../myurls/myurls.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpInterceptorService } from '../core/services/http-interceptor.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -17,6 +19,9 @@ import { MyurlsModule } from '../myurls/myurls.module';
     MyurlsModule,
     MaterialModule
   ],
-  declarations: [ShortifyComponent, MainContentComponent, SideNavComponent, ToolbarComponent]
+  declarations: [ShortifyComponent, MainContentComponent, SideNavComponent, ToolbarComponent],
+  providers: [{
+    provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi:true
+  }]
 })
 export class ShortifyModule { }

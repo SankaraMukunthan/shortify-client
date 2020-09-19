@@ -11,18 +11,23 @@ export class MyurlListingComponent implements OnInit {
 
   constructor(private myurlService: MyurlsService) { }
   displayedColumns = ['longUrl', 'shortUrl', 'date',];
-  dataSource : Url[] = [];
+  resultsLength = 0;
+  dataSource : Url[];
 
   ngOnInit() {
-    this.myurlService.getUrls()
-    .subscribe(
-      data => {
-        this.dataSource = data;
-        console.log(data)
-      }, 
-      error => {console.error(error)}
-      );
-    
-  }
+   this.populateUrlTable();
+ }
+
+ private populateUrlTable(){
+  this.myurlService.getUrls()
+  .subscribe(
+    data => {
+      this.dataSource = data.docs;
+      this.resultsLength = data.total;
+      console.log(data)
+    }, 
+    error => {console.error(error)}
+    );
+ }
 
 }

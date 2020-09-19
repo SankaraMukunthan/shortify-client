@@ -1,0 +1,48 @@
+<div class="limitter">
+  <div class="container-login">
+
+    <mat-card>
+      <div *ngIf="isLoading" class="mat-elevation-z8">
+        <div class="loading-shade">
+          
+      <mat-spinner color="accent" ></mat-spinner>
+        </div>
+      </div>
+      <p>Welcome to <span class="brand-name">shortify</span>  </p>
+      
+      <p>Please fill following details</p>  
+      
+      <mat-card-content>
+        
+            <form class="form-container"  [formGroup]="authSignUpForm" novalidate (ngSubmit)="onSignUpSubmit()">
+              
+              <mat-form-field color="accent" >
+                <input matInput placeholder="First Name"   formControlName = "firstName">
+                <mat-error *ngIf="authSignUpForm.controls.firstName.invalid">First Name is required</mat-error>
+              </mat-form-field>    
+              <mat-form-field color="accent" >
+                <input matInput placeholder="Last Name"   formControlName = "lastName">
+                <mat-error *ngIf="authSignUpForm.controls.lastName.invalid">Last Name is required</mat-error>
+              </mat-form-field>     
+              <mat-form-field color="accent" >
+                <input matInput placeholder="Email"   formControlName = "emailId">
+                <mat-error *ngIf="authSignUpForm.controls.emailId.invalid">Email is invalid</mat-error>
+              </mat-form-field>
+              <mat-form-field color="accent" >
+                <input matInput placeholder="Password"   formControlName = "pwd">
+                <mat-error *ngIf="authSignUpForm.controls.pwd.invalid">Password is invalid</mat-error>
+              </mat-form-field>
+              <div class="wrapper">
+                <button mat-raised-button [disabled]="!authSignUpForm.valid" type="submit" color="accent">Login</button>
+                <button mat-button class="link-button" (click)="navToLogin()">Back to Login Page</button>
+     
+              </div>
+            
+            </form>
+           
+        
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>

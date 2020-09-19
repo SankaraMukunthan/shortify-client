@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import {MatButtonModule, MatIconModule, MatToolbarModule, MatListModule, MatCardModule, MatTableModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import {MatButtonModule, MatIconModule, MatToolbarModule, MatListModule, MatCardModule, MatTableModule, MatFormFieldModule, MatInputModule, MatSnackBarModule, MatPaginatorModule, MatTabGroup, MatTabsModule, MatSpinner, MatProgressSpinnerModule } from '@angular/material';
 import {MatSidenavModule} from '@angular/material/sidenav';
 
 const usedMaterialModules = [
@@ -13,7 +13,11 @@ const usedMaterialModules = [
     MatCardModule,
     MatTableModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSnackBarModule,
+    MatPaginatorModule,
+    MatTabsModule,
+    MatProgressSpinnerModule
 ]
 @NgModule({
   imports: [
