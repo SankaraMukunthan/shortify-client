@@ -15,12 +15,12 @@
                 <mat-error *ngIf="authLoginForm.controls.emailId.invalid">Email is invalid</mat-error>
               </mat-form-field>
               <mat-form-field color="accent" >
-                <input matInput placeholder="Password"   formControlName = "pwd">
+                <input matInput placeholder="Password"   formControlName = "pwd" type="password">
                 <mat-error *ngIf="authLoginForm.controls.pwd.invalid">Password is invalid</mat-error>
               </mat-form-field>
               <div class="wrapper">
                 <button mat-raised-button [disabled]="!authLoginForm.valid" type="submit" color="accent">Login</button>
-                <button mat-button class="link-button">Forgot password?</button>    
+                <button mat-button class="btn btn-block forgot-password" (click)="pwdForgotHandler()">Forgot password?</button>    
               </div>
             
             </form>

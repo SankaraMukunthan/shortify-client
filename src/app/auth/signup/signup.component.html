@@ -29,7 +29,7 @@
                 <mat-error *ngIf="authSignUpForm.controls.emailId.invalid">Email is invalid</mat-error>
               </mat-form-field>
               <mat-form-field color="accent" >
-                <input matInput placeholder="Password"   formControlName = "pwd">
+                <input matInput placeholder="Password"   formControlName = "pwd" type="password">
                 <mat-error *ngIf="authSignUpForm.controls.pwd.invalid">Password is invalid</mat-error>
               </mat-form-field>
               <div class="wrapper">

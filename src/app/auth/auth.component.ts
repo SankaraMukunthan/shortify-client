@@ -37,6 +37,9 @@ export class AuthComponent implements OnInit {
     )
     
   }
+  pwdForgotHandler(){
+    this.router.navigate(["/forgotpassword"])
+  }
 
   private initForm(){
     this.authLoginForm = this.fb.group({
