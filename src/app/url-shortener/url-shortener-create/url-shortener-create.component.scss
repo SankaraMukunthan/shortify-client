@@ -1,0 +1,16 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-container > * {
+    width: 100%;
+  }
+
+  .wrapper {
+      margin-top: 20px;
+  }
+
+  button {
+      margin-left: 10px;
+  }

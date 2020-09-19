@@ -3,12 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
     {
-        path:'short-url-builder',
-        loadChildren:'app/short-url-builder/short-url-builder.module#ShortUrlBuilderModule'
+        path:'shortify',
+        loadChildren:'app/shortify/shortify.module#ShortifyModule'
     },
     {
         path:'**',
-        redirectTo: 'short-url-builder'
+        redirectTo: 'shortify'
     }
 ];
 

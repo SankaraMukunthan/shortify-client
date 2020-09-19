@@ -1,0 +1,32 @@
+<mat-toolbar>
+  <h3>List of urls</h3>
+</mat-toolbar>
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Long Url Column -->
+    <ng-container matColumnDef="longUrl">
+      <mat-header-cell *matHeaderCellDef> Long Url </mat-header-cell>
+      <mat-cell *matCellDef="let url"> <a [href]="url.longUrl" class="mat-cell-link">{{url.longUrl}}</a>   </mat-cell>
+    </ng-container>
+
+    <!-- Short Url Column -->
+    <ng-container matColumnDef="shortUrl">
+      <mat-header-cell *matHeaderCellDef> Short Url </mat-header-cell>
+      <mat-cell *matCellDef="let url"> <a [href]="url.longUrl" class="mat-cell-link">{{url.shortUrl}}</a> </mat-cell>
+    </ng-container>
+
+    <!-- Created At Column -->
+    <ng-container matColumnDef="date">
+      <mat-header-cell *matHeaderCellDef> Created At </mat-header-cell>
+      <mat-cell *matCellDef="let url"> {{url.date | date}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
+

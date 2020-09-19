@@ -1,0 +1,16 @@
+<mat-toolbar><h3>Create Short urls</h3></mat-toolbar>
+<mat-card>
+  <!-- <h3>Create Short urls<h3> -->
+  <form class="form-container"  [formGroup]="createShortUrlForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-form-field color="accent" >
+      <input matInput placeholder="Paste your long url here" pattern="(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})"  formControlName = "longUrl">
+      <mat-error *ngIf="createShortUrlForm.controls.longUrl.invalid">Url is required</mat-error>
+    </mat-form-field>
+    <div class="wrapper">
+      <button mat-raised-button [disabled]="!createShortUrlForm.valid" type="submit" color="accent">Convert</button>
+      <button mat-raised-button type="reset" >cancel</button>
+    </div>
+  
+  </form>
+  
+</mat-card>

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   `,
   styles: []
 })
-export class ShortUrlBuilderComponent implements OnInit {
+export class ShortifyComponent implements OnInit {
 
   constructor() { }
 
